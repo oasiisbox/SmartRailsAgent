@@ -1,0 +1,105 @@
+# SmartRailsAgent RuboCop Configuration
+# Part of the OASIISBOX SmartRails Suite
+
+require:
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+
+# Layout
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: 
+    - '\s+# '
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Style
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: true
+  MinBodyLength: 3
+
+# Metrics
+Metrics/BlockLength:
+  Enabled: true
+  Max: 25
+  Exclude:
+    - 'spec/**/*'
+    - '*.gemspec'
+    - 'Rakefile'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/ModuleLength:
+  Max: 150
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+# Naming
+Naming/FileName:
+  Exclude:
+    - 'lib/smartrails_agent.rb'
+
+# RSpec specific
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 3
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/DescribeClass:
+  Enabled: true
+  Exclude:
+    - 'spec/integration/**/*'
+
+# Security
+Security/Eval:
+  Enabled: true
+
+Security/MarshalLoad:
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true

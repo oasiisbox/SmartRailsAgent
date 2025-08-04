@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/smartrails_agent'
+
+module SmartRailsAgent
+  class CLI
+    def self.run(args = ARGV)
+      case args.first
+      when '--version', '-v'
+        puts "SmartRailsAgent #{SmartRailsAgent::VERSION}"
+        puts "Part of the OASIISBOX SmartRails Suite"
+      when '--help', '-h'
+        show_help
+      else
+        puts "Hello from SmartRailsAgent!"
+        puts "Ruby AI Integration Gem - OASIISBOX/SmartRails"
+        puts "Version: #{SmartRailsAgent::VERSION}"
+        puts "Use --help for more information"
+      end
+    end
+
+    private
+
+    def self.show_help
+      puts <<~HELP
+        SmartRailsAgent - AI Integration for Ruby/Rails
+        Part of the OASIISBOX SmartRails Suite
+
+        Usage: smartrails-agent [options]
+
+        Options:
+          --version, -v    Show version
+          --help, -h       Show this help
+
+        For more information, visit: https://github.com/oasiisbox/SmartRails
+      HELP
+    end
+  end
+end
+
+SmartRailsAgent::CLI.run if $PROGRAM_NAME == __FILE__

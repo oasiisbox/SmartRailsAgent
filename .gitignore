@@ -1,0 +1,90 @@
+# Compiled Ruby
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# Documentation
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+# Environment normalization
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore node_modules if any
+node_modules/
+
+# Ignore gems
+*.gem
+
+# Ruby version files
+.ruby-version
+.ruby-gemset
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Mac files
+.DS_Store
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Coverage reports
+/coverage
+
+# Test artifacts
+/spec/examples.txt
+
+# Build artifacts
+/pkg/
+
+# Temporary files
+/tmp/
+
+# Log files
+*.log
+
+# Local configuration
+/config/local.yml
+/config/secrets.yml
+
+# SmartRails specific
+/reports/
+/logs/
+/.smartrails/

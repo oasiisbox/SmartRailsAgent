@@ -1,0 +1,57 @@
+# SmartRailsAgent Configuration Example
+# Part of the OASIISBOX SmartRails Suite
+
+# Default provider to use
+default_provider: openai
+
+# API Keys (can also be set via environment variables)
+api_keys:
+  openai: "your-openai-api-key-here"        # or set OPENAI_API_KEY
+  mistral: "your-mistral-api-key-here"      # or set MISTRAL_API_KEY
+  claude: "your-anthropic-api-key-here"     # or set ANTHROPIC_API_KEY
+
+# Custom endpoints (optional)
+endpoints:
+  ollama:
+    host: "localhost"
+    port: 11434
+  openai:
+    base_url: "https://api.openai.com/v1"  # Custom OpenAI endpoint
+
+# Global settings
+timeout: 30                               # Request timeout in seconds
+
+# Provider-specific settings
+providers:
+  openai:
+    model: "gpt-3.5-turbo"
+    temperature: 0.7
+    max_tokens: 1000
+  
+  ollama:
+    model: "llama2"
+    temperature: 0.7
+    host: "localhost"
+    port: 11434
+  
+  mistral:
+    model: "mistral-tiny"
+    temperature: 0.7
+    max_tokens: 1000
+  
+  claude:
+    model: "claude-3-haiku-20240307"
+    temperature: 0.7
+    max_tokens: 1000
+
+# SmartRails integration settings
+smartrails:
+  enabled: true
+  audit_ai_responses: false              # Log AI responses for audit
+  cache_responses: false                 # Cache responses to reduce API calls
+  
+# Development settings
+development:
+  debug: false
+  log_requests: false
+  mock_responses: false
